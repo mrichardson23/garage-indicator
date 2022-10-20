@@ -19,7 +19,7 @@ The file `indicator.py` is for the Pico with the LED output. The file `sensor.py
 	network_password = "Wi-Fi password here"
 	mqtt_server_address = "URL or IP address to MQTT broker here"
 
-You'll need to install umqtt.simple. Do so in the Thonny REPL like this:
+You'll need to install `umqtt.simple`. Do so in the REPL like this:
 
 	import network
 	import config
@@ -29,7 +29,17 @@ You'll need to install umqtt.simple. Do so in the Thonny REPL like this:
 	import mip
 	mip.install(‘umqtt.simple’)
 
-It's possible that some firmware uses `upip` instead of `mip`.
+*NOTE:* It's possible that your version of MicroPython for Raspberry Pi Pico uses `upip` instead of `mip`. If one does not work, simply try the other.
+
+Feel free to add MQTT authentication to your set up if necessary. You'll need to update this:
+
+	client = MQTTClient(client_id, mqtt_server, keepalive=0)
+
+to this:
+
+	client = MQTTClient(client_id, mqtt_server, keepalive=0, user="USERNAMEHERE", password="PASSWORDHERE")
+
+in each file.
 
 ## Installation
 This is my next step.
