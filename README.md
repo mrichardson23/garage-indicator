@@ -1,4 +1,4 @@
-#Garage Indicator Project
+# Garage Indicator Project
 
 This project uses Raspberry Pi Pico W microcontrollers to read the state of a door sensor (such as a reed relay, hall effect switch, snap action switch) and wirelessly send the state of the door to an idicator node using an MQTT broker.
 
