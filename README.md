@@ -6,7 +6,7 @@ This project uses Raspberry Pi Pico W microcontrollers to read the state of a do
 1. 2x Raspberry Pi Pico W microcontrollers
 2. 1x Raspberry Pi computer (or other system) with an MQTT broker installed. [See this guide for installing Mosquitto.](https://mosquitto.org/download/) You could also use a cloud-based MQTT broker.
 3. WiFi network coverage.
-4. 2x door sensors. These could be hall effect sensors, reed relays, or snap action switches, anything that will be able to close the connection between GND and the GPIO pin on the Pico W.
+4. 2x door sensors. These could be hall effect sensors, reed relays, or snap action switches, anything that will be able to close the connection between GND and the GPIO pin on the Pico W. I used [these hall effect sensors](https://www.amazon.com/gp/product/B07WPPNVSY/) and they worked perfectly. I 3D-printed brackets to attach these sensors to my garage.
 5. 3x LEDs, one each for open, closed, and changing.
 6. Hookup wire
 7. Solderless breadboard or perfboard.
