@@ -1,7 +1,7 @@
 import network
 import time
 import config
-from machine import Pin
+from machine import Pin, reset
 from umqtt.simple import MQTTClient
 
 wlan = network.WLAN(network.STA_IF)
@@ -50,7 +50,7 @@ def mqtt_connect():
 def reconnect():
     print('Failed to connect to MQTT Broker. Reconnecting...')
     time.sleep(5)
-    machine.reset()
+    reset()
     
 try:
     client = mqtt_connect()
