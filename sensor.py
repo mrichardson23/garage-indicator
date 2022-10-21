@@ -6,7 +6,7 @@ import utime
 import config
 
 openPin = Pin(21, Pin.IN, Pin.PULL_UP)
-closedPin = Pin(20, Pin.IN, Pin.PULL_UP)
+closedPin = Pin(22, Pin.IN, Pin.PULL_UP)
 
 wlan = network.WLAN(network.STA_IF)
 
