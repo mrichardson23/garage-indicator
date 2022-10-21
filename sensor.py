@@ -1,7 +1,7 @@
 import network
 from umqtt.simple import MQTTClient
 import time
-from machine import Pin
+from machine import Pin, reset
 import utime
 import config
 
@@ -33,7 +33,7 @@ def mqtt_connect():
 def reconnect():
     print('Failed to connect to the MQTT Broker. Reconnecting...')
     time.sleep(5)
-    machine.reset()
+    reset()
 
 try:
     client = mqtt_connect()
@@ -67,13 +67,16 @@ openPin.irq(handler=pinHandler, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING)
 closedPin.irq(handler=pinHandler, trigger=Pin.IRQ_FALLING | Pin.IRQ_RISING)
 
 while True:
-    if openPin.value() + closedPin.value() == 1:
-        if openPin.value() == 0:
-            message = b'open'
-        if closedPin.value() == 0:
-            message = b'closed'
-        try:
-            client.publish(topic_pub, message, retain=True)
-        except OSError as e:
-            reconnect()
+    if wlan.isconnected():
+        if openPin.value() + closedPin.value() == 1:
+            if openPin.value() == 0:
+                message = b'open'
+            if closedPin.value() == 0:
+                message = b'closed'
+            try:
+                client.publish(topic_pub, message, retain=True)
+            except OSError as e:
+                reconnect()
+    else:
+       reconnect() 
     time.sleep(update_frequency)
