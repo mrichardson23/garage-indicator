@@ -63,8 +63,8 @@ Refer to [the official Raspberry Pi Pico W pinout documentation](https://datashe
 1. Each terminal block gets a connection to its own GPIO pin. As you'll see in the code, I'm using pins GP21 and GP22.
 1. You can use the USB port on the Pico W for powering the project. Or solder another power connector to VSYS.
 1. Mount the perfboard inside the enclosure.
+1. Drill holes in the enclosure for the power and sensor cables. I used [cable glands like these](https://amzn.to/3D2b6x9) for the wires that are going out of the enclosure.
 1. Connect the sensors to the screw terminal blocks. On my sensors, the brown wire goes to VSYS, the blue wire goes to ground, and the black wire goes to GPIO. Your sensor may be different; check its data sheet or labeling.
-1. I used [cable glands like these](https://amzn.to/3D2b6x9) for the wire that are going out of the enclosure. 
 
 ### Indicator node
 
