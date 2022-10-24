@@ -2,6 +2,10 @@
 
 This project uses Raspberry Pi Pico W microcontrollers to read the state of a door sensor (such as a reed relay, hall effect switch, snap action switch) and wirelessly send the state of the door to an indicator node using an MQTT broker.
 
+Click the thumbnail below to see a quick video overview of the project:
+
+[![A circuit board inside an enclosure inside a garage](http://img.youtube.com/vi/SMbexEAQZ9A/0.jpg)](http://www.youtube.com/watch?v=SMbexEAQZ9A "Raspberry Pi Pico MQTT Garage Project Overview and Update")
+
 ## Parts
 1. 2x Raspberry Pi Pico W microcontrollers, one for the sensors and one for the indicator.
 2. 1x Raspberry Pi computer (or other system) with an MQTT broker installed. [See this guide for installing Mosquitto.](https://mosquitto.org/download/) You could also use a cloud-based MQTT broker.
