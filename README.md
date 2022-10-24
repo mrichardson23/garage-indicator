@@ -29,7 +29,7 @@ You'll need to install `umqtt.simple`. Do so in the REPL like this:
 	wlan.active(True)
 	wlan.connect(config.network, config.network_password)
 	import mip
-	mip.install(‘umqtt.simple’)
+	mip.install("umqtt.simple")
 
 *NOTE:* It's possible that your version of MicroPython for Raspberry Pi Pico uses `upip` instead of `mip`. If one does not work, simply try the other.
 
