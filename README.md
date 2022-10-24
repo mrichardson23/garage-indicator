@@ -47,7 +47,7 @@ in each file.
 This section is in progress.
 
 ### MQTT broker
-As mentioned above, I [this guide for installing Mosquitto](https://mosquitto.org/download/). I used the same Raspberry Pi on my network that is also running my VPN server.
+As mentioned above, I used [this guide for installing Mosquitto](https://mosquitto.org/download/). I used the same Raspberry Pi on my network that is also running my VPN server.
 
 Most home networks use DHCP to assign IP addresses to devices. I'd recommend going into your router settings to give your MQTT broker system a DHCP reservation so that you can be sure that it always gets the same IP. This process will depend on what router you have.
 
@@ -62,9 +62,10 @@ Refer to [the official Raspberry Pi Pico W pinout documentation](https://datashe
 1. Each terminal block gets a connection to VSYS and GND to power the sensors. I soldered hookup wire for that. 
 1. Each terminal block gets a connection to its own GPIO pin. As you'll see in the code, I'm using pins GP21 and GP22.
 1. You can use the USB port on the Pico W for powering the project. Or solder another power connector to VSYS.
-1. Mount the perfboard inside the enclosure and attach the sensors to the screw terminal blocks.
+1. Mount the perfboard inside the enclosure.
+1. Connect the sensors to the screw terminal blocks. On my sensors, the brown wire goes to VSYS, the blue wire goes to ground, and the black wire goes to GPIO. Your sensor may be different; check its data sheet or labeling.
 1. I used [cable glands like these](https://amzn.to/3D2b6x9) for the wire that are going out of the enclosure. 
 
 ### Indicator node
 
-For now, the indicator node is just a Raspberry Pi Pico W with headers interted into a breadboard with LEDs on pins 16, 17, and 18.
+For now, the indicator node is just a Raspberry Pi Pico W with headers inserted into a breadboard with LEDs on  GP16, GP17, and GP18. I intend to create a proper enclosure for this.
