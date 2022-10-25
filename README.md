@@ -35,9 +35,9 @@ You'll need to install `umqtt.simple`. Do so in the REPL like this:
 	import mip
 	mip.install("umqtt.simple")
 
-*NOTE:* It's possible that your version of MicroPython for Raspberry Pi Pico uses `upip` instead of `mip`. If one does not work, simply try the other.
+*NOTE:* Older versions of the MicroPython firmware use `upip` instead of `mip` for package management. If `mip` does not work, try updating your firmware or use `upip`.
 
-Feel free to add MQTT authentication to your set up if necessary. You'll need to update this:
+If you want to add MQTT authentication to your set up, you'll need to update this line:
 
 	client = MQTTClient(client_id, mqtt_server, keepalive=0)
 
@@ -45,7 +45,7 @@ to this:
 
 	client = MQTTClient(client_id, mqtt_server, keepalive=0, user="USERNAMEHERE", password="PASSWORDHERE")
 
-in each file.
+in each file. Consider including these fields in your `config.py` file.
 
 ## Installation
 This section is in progress.
